@@ -1,0 +1,1 @@
+insert into projects (title, description, postedAt) values ('Forest Math', 'Jogo 3D para ensinar matematica basica a criancas de forma ludica', now())
