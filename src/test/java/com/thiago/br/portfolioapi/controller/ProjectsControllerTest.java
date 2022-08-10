@@ -2,8 +2,7 @@ package com.thiago.br.portfolioapi.controller;
 
 import com.thiago.br.portfolioapi.entity.Project;
 import com.thiago.br.portfolioapi.entity.dto.ProjectDTO;
-import com.thiago.br.portfolioapi.service.ProjectService;
-import net.bytebuddy.asm.Advice;
+import com.thiago.br.portfolioapi.service.ProjectServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,7 +23,7 @@ public class ProjectsControllerTest {
     @InjectMocks
     private ProjectController controller;
     @Mock
-    private ProjectService service;
+    private ProjectServiceImpl service;
 
     private Project project;
 

@@ -12,17 +12,20 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ProjectService {
+public class ProjectServiceImpl implements ProjectsService{
     private final ProjectRepository repository;
 
+    @Override
     public List<Project> getProjects() {
         return repository.findAll();
     }
 
+    @Override
     public Project findByTitle(String title){
         return repository.findByTitleContaining(title);
     }
 
+    @Override
     public Project add(ProjectDTO projectDTO) {
         Project project = Project.builder()
                 .title(projectDTO.getTitle())
@@ -33,6 +36,7 @@ public class ProjectService {
         return repository.save(project);
     }
 
+    @Override
     public Project update(Long id, ProjectDTO projectDTO) {
         Optional<Project> project = repository.findById(id);
 
@@ -49,6 +53,7 @@ public class ProjectService {
          return project.orElseGet(Project::new);
     }
 
+    @Override
     public void delete(Long id) {
         repository.deleteById(id);
     }

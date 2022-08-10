@@ -2,7 +2,7 @@ package com.thiago.br.portfolioapi.controller;
 
 import com.thiago.br.portfolioapi.entity.Project;
 import com.thiago.br.portfolioapi.entity.dto.ProjectDTO;
-import com.thiago.br.portfolioapi.service.ProjectService;
+import com.thiago.br.portfolioapi.service.ProjectServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/projects")
 @RequiredArgsConstructor
 public class ProjectController {
-    private final ProjectService service;
+    private final ProjectServiceImpl service;
 
     @GetMapping
     public ResponseEntity<List<Project>> getProjects(){

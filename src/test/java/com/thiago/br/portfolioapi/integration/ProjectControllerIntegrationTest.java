@@ -2,7 +2,7 @@ package com.thiago.br.portfolioapi.integration;
 
 import com.thiago.br.portfolioapi.controller.ProjectController;
 import com.thiago.br.portfolioapi.entity.Project;
-import com.thiago.br.portfolioapi.service.ProjectService;
+import com.thiago.br.portfolioapi.service.ProjectServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,7 +32,7 @@ public class ProjectControllerIntegrationTest {
     @InjectMocks
     private ProjectController controller;
     @Mock
-    private ProjectService service;
+    private ProjectServiceImpl service;
 
     private MockMvc mockMvc;
 
