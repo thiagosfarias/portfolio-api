@@ -3,21 +3,13 @@ spring:
     name: portfolio-api
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://0.0.0.0:5432/thi
-    username: thi
-    password: 123
-    hikari:
-      schema: portfolio
+    url: jdbc:postgresql://portfolio-db:5432/portfolio
+    username: postgres
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     database: postgresql
-  flyway:
-    url: jdbc:postgresql://0.0.0.0:5432/
-    schemas: portfolio
-    user: thi
-    password: 123
-    locations: classpath:db/migration
 server:
-  port: 8000
+  port: 8080

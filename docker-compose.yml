@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  portfolio-api:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: portfolio-api
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://portfolio-db:5432/portfolio
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - spring-boot-postgres-network
+    depends_on:
+      - postgres
+  postgres:
+    container_name: portfolio-db
+    image: postgres:latest
+    restart: always
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=portfolio
+    networks:
+      - spring-boot-postgres-network
+networks:
+  spring-boot-postgres-network:
+    driver: bridge
