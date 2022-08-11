@@ -1,7 +1,8 @@
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/docker
+!**/src/main/docker/
+>>>>>>> fec3259a9d2af8db7c42fd2d14ce2420f95bb3e0
 !**/src/main/**/target/
 !**/src/test/**/target/
 
