@@ -1,6 +1,33 @@
 spring:
+  profiles:
+    active: local
   application:
     name: portfolio-api
+server:
+  port: 8080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/portfolio
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://portfolio-db:5432/portfolio
@@ -11,5 +38,3 @@ spring:
       ddl-auto: update
     show-sql: true
     database: postgresql
-server:
-  port: 8080
